@@ -1,5 +1,5 @@
 import { FaSignature } from "react-icons/fa";
-
+import * as actions from '@/actions'
 const Input = () => {
  return (
   <div className="flex flex-col justify-center items-center pt-28 pb-16 ">
@@ -9,9 +9,9 @@ const Input = () => {
 
    <div className="flex w-3/5 justify-center items-center ">
     <form
-     action=""
+     action={actions.addNoteAction}
      className="flex w-full items-center justify-between drop-shadow-lg">
-     <input
+     <input name="note" 
       className="bg-white border border-gray-400 w-full flex-grow p-6 rounded-tl-md rounded-bl-md placeholder-white placeholder:text-2xl placeholder:capitalize"
       type="text"
       placeholder="add your note here .."
