@@ -7,7 +7,8 @@ export default function Home() {
   <div>
    <Input />
 
-     <Wrapper>
+ 
+     <Wrapper title="your latest notes >">
     <Item />
     <Item />
     <Item />
