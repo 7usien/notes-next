@@ -9,27 +9,28 @@ export async function addNoteAction(formData:FormData) {
  // //!use server action > use server
 
  // //* valid data from user 
- const title = formData.get('title') as string;
- const note = formData.get('note') as string;
- const image = formData.get('image') as string;
- const tags= formData.get('tags') as string;
+ let title = formData.get('title') as string;
+ let note = formData.get('note') as string;
+ let image = formData.get('image') as string;
+ let tags= formData.get('tags') as string;
  
- const AddNote = await db.note.create({
+ let AddedNote = await db.note.create({
   data: {
    title,
    note,
+   date,
    image,
    tags
   }
  })
+ console.log(AddedNote)
 
- if (!AddNote) {
+ if (!AddedNote) {
   notFound();
  }
  
 
  // //^ create a new note inside our DB
  
- // //&& redirect to Home
 
 }
