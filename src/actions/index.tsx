@@ -3,34 +3,35 @@
 import { db } from "@/db";
 import { notFound } from "next/navigation";
 
-export async function addNoteAction(formData:FormData) {
- console.log(formData);
+interface IAddNoteTypes {
+ title: string;
+ note: string;
+ date: string;
+ image: string;
+ tags: string[];
+}
 
- // //!use server action > use server
-
- // //* valid data from user 
- let title = formData.get('title') as string;
- let note = formData.get('note') as string;
- let image = formData.get('image') as string;
- let tags= formData.get('tags') as string;
+export async function addNoteAction(formData: FormData) {
+ const title = formData.get("title") as string;
+ const note = formData.get("note") as string;
+ const image = formData.get("image") as string;
+ const date = formData.get("date") as string;
+ const tags = formData.get("tags") as string;
  
- let AddedNote = await db.note.create({
+ const AddedNote = await db.note.create({
   data: {
    title,
    note,
-   date,
    image,
-   tags
-  }
- })
+   date,
+   tags,
+  },
+ });
+
+
  console.log(AddedNote)
 
  if (!AddedNote) {
   notFound();
  }
- 
-
- // //^ create a new note inside our DB
- 
-
 }

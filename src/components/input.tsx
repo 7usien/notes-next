@@ -1,5 +1,8 @@
-import { FaSignature } from "react-icons/fa";
+
+
+
 import * as actions from "@/actions";
+import Iconselect from "./Iconselect";
 const Input = () => {
  return (
   <div className="flex flex-col justify-center items-center pt-28 pb-16">
@@ -11,7 +14,6 @@ const Input = () => {
     <form
      action={actions.addNoteAction}
      className="flex w-full flex-col items-center justify-between drop-shadow-lg">
-     {/* Title and Date (1st Row) */}
      <div className="grid grid-cols-2 gap-4 w-full ">
       <div className="w-full">
        <label htmlFor="title" className="block text-gray-700 font-medium mb-2">
@@ -21,7 +23,7 @@ const Input = () => {
         type="text"
         name="title"
         placeholder="note title .."
-        className="bg-gray-100 border border-gray-400 w-full p-6 rounded-tl-md rounded-bl-md placeholder:text-2xl placeholder:capitalize"
+        className="bg-gray-100 border border-gray-400 w-full p-6 rounded placeholder:text-2xl placeholder:capitalize"
        />
       </div>
       <div className="w-full">
@@ -29,10 +31,10 @@ const Input = () => {
         Date and Time
        </label>
        <input
-        type="datetime-local"
-        name="data"
+        type="date"
+        name="date"
         id="date"
-        className="bg-gray-100 border border-gray-400 w-full p-6 rounded-tl-md rounded-bl-md"
+        className="bg-gray-100 border border-gray-400 w-full p-6 rounded"
        />
       </div>
      </div>
@@ -42,26 +44,23 @@ const Input = () => {
       <label htmlFor="note" className="block text-gray-700 font-medium mb-2">
        Note
       </label>
-      <input
-       type="text"
+      <textarea
+     
        name="note"
        placeholder="note content"
-       className="bg-gray-100 border border-gray-400 w-full p-6 rounded-tl-md rounded-bl-md placeholder:text-2xl placeholder:capitalize"
+       className="bg-gray-100 border border-gray-400 w-full p-6 rounded placeholder:text-2xl placeholder:capitalize"
       />
      </div>
 
      {/* Image and Tags (3rd Row) */}
      <div className="grid grid-cols-2 gap-4 w-full mt-4">
       <div className="w-full">
-       <label htmlFor="image" className="block text-gray-700 font-medium mb-2">
-        Thumbnail
+       <label htmlFor="icon" className="block text-gray-700 font-medium mb-2">
+        Icon
        </label>
-       <input
-        type="file"
-        name="image"
-        id="image"
-        className="bg-gray-100 border border-gray-400 w-full p-6 rounded-tl-md rounded-bl-md"
-       />
+       
+
+      <Iconselect />
       </div>
       <div className="w-full">
        <label htmlFor="tags" className="block text-gray-700 font-medium mb-2">
@@ -71,14 +70,14 @@ const Input = () => {
         type="text"
         name="tags"
         id="tags"
-        className="bg-gray-100 border border-gray-400 w-full p-6 rounded-tl-md rounded-bl-md placeholder:text-2xl placeholder:capitalize"
+        className="bg-gray-100 border border-gray-400 w-full p-6 rounded placeholder:text-2xl placeholder:capitalize"
        />
       </div>
      </div>
 
      <button
       type="submit"
-      className="w-[120px] text-2xl bg-blue-600 p-5 capitalize text-white rounded hover:bg-yellow-500 mt-4">
+      className="w-[150px] text-2xl bg-blue-600 p-3 capitalize text-white rounded hover:bg-blue-800 mt-4">
       add
      </button>
     </form>

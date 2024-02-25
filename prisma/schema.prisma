@@ -15,6 +15,7 @@ model Note {
   id Int @id @default(autoincrement())
   title String
   note String
+  date String
   image String
   tags String
 
