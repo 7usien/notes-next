@@ -16,7 +16,7 @@ model Note {
   title String
   note String
   date String
-  image String
+  icon String
   tags String
 
 }

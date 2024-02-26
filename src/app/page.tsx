@@ -1,17 +1,23 @@
 import Input from "@/components/input";
-import Item from "@/components/item";
-import Wrapper from "@/components/wrapper";
 
-export default function Home() {
+import Wrapper from "@/components/wrapper";
+import { db } from "@/db";
+import FetchItems from "@/utilits/FetchItems";
+export default async function Home() {
+
+ const notes = await db.note.findMany();
+
+
  return (
   <div>
    <Input />
 
    <Wrapper title="your latest notes >">
-    <Item />
-    <Item />
-    <Item />
-    <Item />
+
+    <FetchItems notes={notes} />
+
+    
+  
    </Wrapper>
   </div>
  );
