@@ -15,7 +15,7 @@ const FetchItems = ({notes}) => {
 
  return (
   <>
-   {mynotes.map((mynote)=><Item key={mynote.id} {...mynote} />)}
+   {mynotes.length > 0 ? mynotes.map((mynote)=><Item key={mynote.id} {...mynote} />) : <h2 className="text-center text-2xl bg-orange-400 border border-orange-400 p-2">thers is not notes yet .. please add one !</h2>}
    
 
   </>

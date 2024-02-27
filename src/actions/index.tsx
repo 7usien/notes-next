@@ -1,7 +1,8 @@
 "use server";
 
+import Loader from "@/components/Loader";
 import { db } from "@/db";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 interface IAddNoteTypes {
  title: string;
@@ -17,7 +18,7 @@ export async function addNoteAction(formData: FormData) {
  const icon = formData.get("icon") as string;
  const date = formData.get("date") as string;
  const tags = formData.get("tags") as string;
- 
+
  const AddedNote = await db.note.create({
   data: {
    title,
@@ -28,10 +29,9 @@ export async function addNoteAction(formData: FormData) {
   },
  });
 
-
-
  if (!AddedNote) {
   notFound();
  }
-}
 
+ redirect("/");
+}

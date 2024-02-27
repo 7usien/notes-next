@@ -10,13 +10,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Note {
-  id Int @id @default(autoincrement())
-  title String
-  note String
-  date String
-  icon String
-  tags String
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  title     String
+  note      String
+  date      String
+  tags      String
+  icon      String
+}
 
+model Image {
+  id         Int      @id @default(autoincrement())
+  filename   String
+  filePath   String
+  uploadedAt DateTime @default(now())
 }

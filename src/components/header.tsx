@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
  FaHome,
  FaList,
@@ -10,10 +11,12 @@ const Header = () => {
  return (
   <div className="w-full border-b">
    <div className="flex justify-between items-center max-w-5xl mx-auto py-3">
+    <Link href="/">
     <h3 className="flex text-3xl gap-4 items-center text-blue-700">
      <FaScroll />
      D.Notes
-    </h3>
+     </h3>
+     </Link>
 
     <nav>
      <ul className="flex gap-6 text-gray-600">

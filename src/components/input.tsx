@@ -1,9 +1,15 @@
+import { IoIosAddCircle } from "react-icons/io";
 
 
 
 import * as actions from "@/actions";
 import Iconselect from "./Iconselect";
 const Input = () => {
+
+
+ 
+
+
  return (
   <div className="flex flex-col justify-center items-center pt-28 pb-16">
    <h3 className="text-6xl capitalize my-8 flex gap-4 text-blue-700">
@@ -14,7 +20,7 @@ const Input = () => {
     <form
      action={actions.addNoteAction}
      className="flex w-full flex-col items-center justify-between drop-shadow-lg">
-     <div className="grid grid-cols-2 gap-4 w-full ">
+     <div className="grid grid-cols-2 gap-4  w-full ">
       <div className="w-full">
        <label htmlFor="title" className="block text-gray-700 font-medium mb-2">
         Title
@@ -75,10 +81,12 @@ const Input = () => {
       </div>
      </div>
 
-     <button
-      type="submit"
-      className="w-[150px] text-2xl bg-blue-600 p-3 capitalize text-white rounded hover:bg-blue-800 mt-4">
-      add
+     <button 
+      type="submit" 
+      className="w-1/3 text-2xl bg-blue-600 p-4 mt-6 capitalize text-white rounded-full hover:bg-blue-800 flex justify-center items-center gap-2">
+      
+      <IoIosAddCircle />
+      add your note
      </button>
     </form>
    </div>
