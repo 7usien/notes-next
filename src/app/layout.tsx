@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Pacifico, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-const dm_sans = DM_Sans({ subsets: ["latin"] });
+
+const openSans = Open_Sans({ weight: ['400'], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Daily Notes",
@@ -17,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={dm_sans.className}>
+      <body  className={openSans.className}>
 
         <Header />
 

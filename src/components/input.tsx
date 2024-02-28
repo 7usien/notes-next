@@ -12,7 +12,7 @@ const Input = () => {
 
  return (
   <div className="flex flex-col justify-center items-center pt-28 pb-16">
-   <h3 className="text-6xl capitalize my-8 flex gap-4 text-blue-700">
+   <h3 className="text-6xl capitalize my-8 flex gap-4 text-blue-700 custom-heading">
     what you think today?
    </h3>
 

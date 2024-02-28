@@ -1,6 +1,5 @@
 "use server";
 
-import Loader from "@/components/Loader";
 import { db } from "@/db";
 import { notFound, redirect } from "next/navigation";
 
